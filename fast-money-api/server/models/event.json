@@ -1,0 +1,78 @@
+{
+  "name": "Event",
+  "plural": "events",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "tickets_quantity": {
+      "type": "number",
+      "required": true
+    },
+    "tickets_available": {
+      "type": "number",
+      "default": 0
+    },
+    "winner_numbers": {
+      "type": "number",
+      "default": 0
+    },
+    "winner_pay": {
+      "type": "number",
+      "default": 0
+    },
+    "price": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "active"
+    },
+    "generated_winners": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "prototype.availableTicket": {
+      "accepts": [
+        {
+          "arg": "number",
+          "type": "number",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "boolean",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/available-ticket",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

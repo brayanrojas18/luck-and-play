@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDb"
+  },
+  "AccessToken": {
+    "dataSource": "mongoDb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDb",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource"
+  },
+  "Role": {
+    "dataSource": "mongoDb",
+    "public": false
+  },
+  "usuario": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "configuration": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "Wallet": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "Transaction": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "ShareHolder": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "counters": {
+    "dataSource": "mongoDb",
+    "public": true
+  }
+}

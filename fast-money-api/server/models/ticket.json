@@ -1,0 +1,68 @@
+{
+  "name": "Ticket",
+  "plural": "tickets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "number": {
+      "type": "number",
+      "required": true
+    },
+    "selled": {
+      "type": "boolean",
+      "default": false
+    },
+    "reserved": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "event_id"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "prototype.buy": {
+      "accepts": [
+        {
+          "arg": "transaction_id",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "arg": "wallet_id",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "any",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Comprar ticket",
+      "http": [
+        {
+          "path": "/buy",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

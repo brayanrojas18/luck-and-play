@@ -1,0 +1,65 @@
+{
+  "name": "Transaction",
+  "plural": "transactions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "wallet_id": {
+      "type": "string",
+      "required": true
+    },
+    "transaction_id": {
+      "type": "string",
+      "required": true
+    },
+    "pay_transaction_id": {
+      "type": "string",
+      "required": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "required": false
+    },
+    "winner": {
+      "type": "boolean",
+      "required": false
+    },
+    "payed": {
+      "type": "boolean",
+      "required": false
+    },
+    "number": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "prototype.pay": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "any",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/pay",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

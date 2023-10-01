@@ -1,0 +1,23 @@
+{
+  "restApiRoot": "/api",
+  "host": "0.0.0.0",
+  "host_public": "api-casa.lagocha2020.com",
+  "port": 5021,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "handleErrors": false,
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false
+  }
+}

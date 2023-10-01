@@ -1,0 +1,74 @@
+{
+  "name": "usuario",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Company": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "code_phone": {
+      "type": "string",
+      "required": true
+    },
+    "code_phone": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "keep_login": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "required": true,
+      "default": "user"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rol": {
+      "type": "belongsTo",
+      "model": "Rol",
+      "foreignKey": "role_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
